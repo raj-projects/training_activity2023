@@ -3,8 +3,8 @@ import React from 'react';
 const HocBlue = (props) => {
   return (
     <div className='counter-section' style={{backgroundColor: 'blue', color: 'white'}}>
-      <h2>Blue Counter</h2>
-      <h3><props.comp /></h3>
+      <h1>Blue Counter</h1>
+      <h1><props.comp /></h1>
     </div>
   );
 };
