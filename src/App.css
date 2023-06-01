@@ -1,0 +1,17 @@
+.App {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.counter-section {
+  margin: 0 auto;
+  text-align: center;
+  width: 200px;
+  height: 200px;
+  border: 1px solid#666;
+}
+
+.multi-counter {
+  display: flex;
+  justify-content: space-evenly;
+}
