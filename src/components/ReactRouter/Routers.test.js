@@ -16,6 +16,22 @@ it('should render the home page', () => {
   const navbar = getByTestId('navbar');
   const link = getByTestId('home-link');
 
-  expect(container.innerHTML).toMatch('Home page1');
+  expect(container.innerHTML).toMatch('Home page');
   expect(navbar).toContainElement(link);
+});
+
+it('should navigate to the about page', () => {
+  const { container, getByTestId } = renderWithRouter(<TestRouter />);
+
+  fireEvent.click(getByTestId('about-link'));
+
+  expect(container.innerHTML).toMatch('About page');
+});
+
+it('should navigate to the contact page with the params', () => {
+  const { container, getByTestId } = renderWithRouter(<TestRouter />);
+
+  fireEvent.click(getByTestId('contact-link'));
+
+  expect(container.innerHTML).toMatch('John Doe');
 });
