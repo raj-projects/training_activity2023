@@ -5,7 +5,9 @@ exports[`should take a snapshot 1`] = `
   <div
     class="App"
   >
-    React testing Libs
+    <h1>
+      Unit Testing with React testing library
+    </h1>
   </div>
 </DocumentFragment>
 `;

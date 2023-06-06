@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, cleanup } from '@testing-library/react';
-import TestElements from './TestElement';
+import TestElements from './Elements';
 
 afterEach(cleanup);
 
