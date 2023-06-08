@@ -1,28 +1,25 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React from 'react';
+import Todo from './todo';
 
 const Todos = () => {
-  const [todoList, setTodoList] = useState(null);
-
-  useEffect(() => {
-    (async () => {
-      const todos = await axios.get(
-        'https://jsonplaceholder.typicode.com/todos'
-      );
-      setTodoList(todos.data);
-    })();
-  }, []);
-
-  return todoList ? (
-    <ul>
-      {todoList.map((todo, index) => (
-        <li key={index} data-testid="todo">
-          {todo.title}
-        </li>
-      ))}
-    </ul>
-  ) : (
-    <p>Loading....</p>
+  const todos = [
+    {
+      id: 1,
+      title: 'Todo 1',
+      completed: false,
+    },
+    {
+      id: 2,
+      title: 'Todo 2',
+      completed: true,
+    },
+  ];
+  return (
+    <div>
+      {todos.map((todo) => {
+        return <Todo key={todo.id} todo={todo} />;
+      })}
+    </div>
   );
 };
 

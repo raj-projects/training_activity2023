@@ -1,11 +1,14 @@
-import React from 'react';
-import { render, cleanup } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import App from './App';
 
-afterEach(cleanup);
+test('renders Todo 1', () => {
+  render(<App />);
+  const linkElement = screen.getByText(/Todo 1/i);
+  expect(linkElement).toBeInTheDocument();
+});
 
-it('should take a snapshot', () => {
-  const { asFragment } = render(<App />);
-
-  expect(asFragment(<App />)).toMatchSnapshot();
+test('renders Todo 2', () => {
+  render(<App />);
+  const linkElement = screen.getByText(/Todo 2/i);
+  expect(linkElement).toBeInTheDocument();
 });
